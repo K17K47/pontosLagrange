@@ -1,0 +1,69 @@
+\documentclass[10pt,twoside,a4paper,brazil]{abntex2}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[num]{abntex2cite}
+
+\graphicspath{{./img/}}
+
+\titulo{Pontos de Lagrange}
+
+\autor{} % TODO: Checar forma mais eficiente e estéticamente melhor de listar os contribuidores
+\local{Brasil}
+\data{2017}
+
+\orientador{}  %
+
+\instituicao{
+   Universidade de São Paulo -- USP
+   \par
+   Instituto de Física de São Carlos -- IFSC
+}
+
+
+\tipotrabalho{}   % TODO
+
+\preambulo{}   % TODO
+
+\makeatletter
+
+\hypersetup{
+   pdftitle={\@title},
+   pdfauthor={\@author},
+   pdfsubject={\imprimirpreambulo},
+   pdfkeywords={}, % TODO
+   pdfcreator={LaTeX with abnTeX2},
+   colorlinks=true,
+   linkcolor=blue,
+   citecolor=blue,
+   urlcolor=blue
+}
+
+\makeatother
+
+\begin{document}
+   \imprimircapa
+   \imprimirfolhaderosto
+   \tableofcontents
+
+   \begin{resumo}
+      Placeholder
+      \vspace{\onelineskip}
+      \noindent
+      \textbf{Palavras-chave}:
+   \end{resumo}
+
+   \chapter{Introdução}
+      \input{section/intro.tex}
+
+   \chapter{Conclusão}
+      \input{section/conclusao.tex}
+
+   \bibliography{bib/general.bib}
+\end{document}
