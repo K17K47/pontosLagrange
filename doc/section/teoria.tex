@@ -1,11 +1,38 @@
 \section{Gravitação e o problema de n-corpos}
 
-% TODO Descrição breve da gravitação na mecânica clássica, introduzindo o potencial efetivo, sua interpretação e propriedades relevantes.
-% Problema de n-corpos na gravitação, casos reduzidos, prova de existência de pontos estacionários pro potencial efetivo newtoniano
-% https://arxiv.org/abs/astro-ph/0503600
-% http://web.physics.ucsb.edu/~mccann/notes/Effective_Potential.pdf
+Dois corpos massivos ocupando posições diferentes no espaço sofrem uma atração proporcional ao produto de suas massas e ao inverso do quadrado de sua distância mútua no sentido que os une. Isso é descrito pelo potencial,
 
-Sistemas gravitacionais de mais de dois corpos são, em geral, impossíveis de se resolver analiticamente. Num sistema de $n$ partículas interagindo entre si exclusivamente gravitacionalmente, a equação de movimento da $i$-ésima partícula é 
+\begin{equation}
+    \label{eq:gravitacaouniversal}
+    U(\mathbf{r}_1 - \mathbf{r}_2) = -\frac{Gm_1m_2}{||\mathbf{r}_1 - \mathbf{r}_2||}
+\end{equation}
+
+Mas o espaço é homogêneo, e o movimento do sistema pode depender apenas das posições relativas dos objetos. Isso motiva que se defina
+
+\begin{align}
+    \mathbf{r} &= \mathbf{r}_1 - \mathbf{r}_2 && \mu = \frac{m_1m_2}{m_1 + m_2}
+\end{align}
+
+e as equações de movimento se reduzem a
+
+\begin{equation}
+    \mu \ddot{\mathbf{r}} = -\frac{\partial U}{\partial \mathbf{r}}
+\end{equation}
+
+e como
+
+\begin{align}
+    \mathbf{r}_1 &= \mathbf{r}_{CM} + \frac{m_2}{m_1 + m_2}\mathbf{r} && \mathbf{r}_2 &= \mathbf{r}_{CM} - \frac{m_1}{m_1 + m_2}\mathbf{r}
+\end{align}
+
+conclui-se que num referencial baricêntrico o problema de dois corpos é simplesmente o problema de força central, que é resolvido, pela mudança de variável $u = \frac{1}{r}$ num sistema de coordenadas polar perpendicular ao momento angular $\mathbf{L}$ (que é conservado), através da equação de Binet,
+
+\begin{equation}
+    \label{eq:binet}
+    \frac{d^2u}{d\theta^2} + u = -\frac{\mu}{\mathbf{L}^2}\frac{d}{du}\left( U + \frac{\mathbf{L}^2u^2}{2\mu}\right).
+\end{equation}
+
+Assim, obtem-se a trajetória e, com algum esforço, a evolução temporal do sistema. Sistemas gravitacionais de mais de dois corpos são, contudo, impossíveis de se resolver analiticamente no caso geral. Num sistema de $n$ partículas interagindo entre si exclusivamente gravitacionalmente, a equação de movimento da $i$-ésima partícula é 
 
 \begin{equation}
     \ddot{\mathbf{r}}_i=-\sum_{\substack{j=1\\j \neq i}}^{n} \frac{Gm_j(\mathbf{r}_j - \mathbf{r}_i)}{||\mathbf{r}_j - \mathbf{r}_i||^3}.
@@ -13,10 +40,16 @@ Sistemas gravitacionais de mais de dois corpos são, em geral, impossíveis de s
 
 Trata-se de uma situação consideravelmente mais complexa que a de poucos corpos, uma vez que não há mais conservação de momento angular, a possibilidade de colisões gera singularidades nas soluções e o desacoplamento das equações não é possível. Apesar disso, é possível analisar e resolver sistemas de $n$-corpos, especialmente na presença de restrições e aproximações adequadas.
 
-Com efeito, num sistema coplanar descrito por um referencial baricêntrico que gira com velocidade angular constante $\omega$, definindo o potencial efetivo por unidade de massa
+Os pontos de Lagrange emergem naturalmente na análise de um problema de três corpos como uma extensão do problema de Kepler: Sendo $a$ a distância entre dois objetos de massas $m_1$ e $m_2$, tomamos um referencial baricêntrico que gira com velocidade angular constante $\omega$ igual à orbital
 
 \begin{equation}
-    U_{eff}(\mathbf{r}) = -\sum_{i = 1}^n \frac{Gm_i}{||\mathbf{r} - \mathbf{r}_i||} - \frac{1}{2}\mathbf{r}^2\omega^2
+    \omega^2 = \frac{G(m_1 + m_2)}{2\pi a^3}
+\end{equation}
+
+Caso um corpo estacionário de massa $m$ seja inserido nesse sistema, preservando coplanaridade, observar-se-á agindo sobre ele uma força centrífuga (e, caso se movimentasse, também uma força de Coriolis. Garantidamente não há força de Euler nesse tratamento), de forma que o potencial efetivo se torna
+
+\begin{equation}
+    U_{eff}(\mathbf{r}) = - \frac{Gm_i}{||\mathbf{r} - \mathbf{r}_1||} - \frac{Gm_i}{||\mathbf{r} - \mathbf{r}_2||} - \frac{1}{2}\mathbf{r}^2\omega^2
 \end{equation}
 
 e escolhendo um ponto no espaço $\mathbf{r_0} \neq \mathbf{r}_i$, observamos que o conjunto
@@ -25,9 +58,9 @@ e escolhendo um ponto no espaço $\mathbf{r_0} \neq \mathbf{r}_i$, observamos qu
     \Lambda &= \{\mathbf{r} | U_{eff}(\mathbf{r}) \geq U_{eff}(\mathbf{r_0}) - \epsilon\} && \epsilon > 0
 \end{align}
 
-é fechado e limitado, uma vez que o potencial tende a descrescer. Por virtude da continuidade dessa função no compacto $\Lambda$, ela atinge nele um máximo $\mathbf{r_M}$. Esse máximo está necessariamente contido no interior de $\Lambda$, já que $U_{eff}(\mathbf{r_M}) \geq U_{eff}(\mathbf{r_0}$, e pela diferenciabilidade de $U_{eff}$ o ponto é estacionário: um objeto de massa negligível nesse ponto realizará movimento circular uniforme ao redor do centro de massa do sistema. Veremos mais adiante que pontos de maximização como esse são, num sentido não muito trivial, atrativos.
+é compacto, e portanto a função atinge nele um máximo $\mathbf{r_M}$. $\mathbf{r_M}$ está necessariamente contido no interior de $\Lambda$, já que $U_{eff}(\mathbf{r_M}) \geq U_{eff}(\mathbf{r_0})$, e pela diferenciabilidade de $U_{eff}$ o ponto é estacionário: um objeto de massa negligível nesse ponto realizará movimento circular uniforme ao redor do centro de massa do sistema.
 
-Para fins práticos, entretanto, existência é insatisfatória. Isso, dentre outros fatores, torna a descoberta por Euler e Lagrange dos cinco pontos de Lagrange notável, uma vez que seu cálculo é razoavelmente simples e, por serem estacionários para o potencial de uma órbita de Kepler, encontram grande aplicabilidade em situações reais.
+Para fins práticos, entretanto, existência é insatisfatória, mas motiva o cálculo desses pontos, dentre outros pontos estacionários do potencial efetivo, que serão justamente os pontos de Lagrange.
 
 \section{Dedução dos pontos de Lagrange}
 
