@@ -29,7 +29,7 @@ conclui-se que num referencial baricêntrico o problema de dois corpos é simple
 
 \begin{equation}
     \label{eq:binet}
-    \frac{d^2u}{d\theta^2} + u = -\frac{\mu}{\mathbf{L}^2}\frac{d}{du}U\left(\frac{1}{u}\right).
+    \frac{d^2u}{d\theta^2} + u = -\frac{\mu}{\mathbf{L}^2}F\left(\frac{1}{u}\right).
 \end{equation}
 
 Assim, obtem-se a trajetória e, com algum esforço, a evolução temporal do sistema. Sistemas de dois corpos ou de um corpo (caso limite para um dos corpos muito mais massivo que o outro) admitem, em situações de energia negativa, órbitas elípticas
@@ -46,8 +46,6 @@ Sistemas gravitacionais de mais de dois corpos são, por outro lado, impossívei
 
 Trata-se de uma situação consideravelmente mais complexa que a de poucos corpos, uma vez que não há mais conservação de momento angular, a possibilidade de colisões gera singularidades nas soluções e o desacoplamento das equações não é possível. Apesar disso, é possível analisar e resolver sistemas de $n$-corpos, especialmente na presença de restrições e aproximações adequadas.
 
-.		.		.		.		.		.		.	
-
 Os pontos de Lagrange emergem naturalmente na análise de um problema de três corpos como uma extensão do problema de Kepler: Sendo $a$ a distância entre dois objetos de massas $m_1$ e $m_2$, tomamos um referencial baricêntrico que gira com velocidade angular constante $\omega$ igual à orbital
 
 \begin{equation}
@@ -57,16 +55,16 @@ Os pontos de Lagrange emergem naturalmente na análise de um problema de três c
 Caso um corpo estacionário de massa $m$ seja inserido nesse sistema, preservando coplanaridade, observar-se-á agindo sobre ele uma força centrífuga (e, caso se movimentasse, também uma força de Coriolis. Garantidamente não há força de Euler nesse tratamento), de forma que o potencial efetivo se torna
 
 \begin{equation}
-    U_{eff}(\mathbf{r}) = - \frac{Gm_i}{||\mathbf{r} - \mathbf{r}_1||} - \frac{Gm_i}{||\mathbf{r} - \mathbf{r}_2||} - \frac{1}{2}\mathbf{r}^2\omega^2
+    U_{eff}(\mathbf{r}) = - \frac{Gmm_i}{||\mathbf{r} - \mathbf{r}_1||} - \frac{Gmm_i}{||\mathbf{r} - \mathbf{r}_2||} - \frac{1}{2}\mathbf{r}^2\omega^2
 \end{equation}
 
 e escolhendo um ponto no espaço $\mathbf{r_0} \neq \mathbf{r}_i$, observamos que o conjunto
 
 \begin{align} 
-    \Lambda &= \{\mathbf{r} | U_{eff}(\mathbf{r}) \geq U_{eff}(\mathbf{r_0}) - \epsilon\} && \epsilon > 0
+    \Lambda &= \{\mathbf{r} | U_{eff}(\mathbf{r}) \geq U_{eff}(\mathbf{r_0}) - \epsilon\}
 \end{align}
 
-é compacto, e portanto a função atinge nele um máximo $\mathbf{r_M}$. $\mathbf{r_M}$ está necessariamente contido no interior de $\Lambda$, já que $U_{eff}(\mathbf{r_M}) \geq U_{eff}(\mathbf{r_0})$, e pela diferenciabilidade de $U_{eff}$ o ponto é estacionário: um objeto de massa negligível nesse ponto realizará movimento circular uniforme ao redor do centro de massa do sistema.
+é, para $\epsilon > 0$, fechado e, como U_{eff} tende a $-\infty$ pra $||\mathbf{r}||$ grande, limitado e portanto compacto,. Assim, a função atinge nele um máximo $\mathbf{r_M}$. $\mathbf{r_M}$ está necessariamente contido no interior de $\Lambda$, já que $U_{eff}(\mathbf{r_M}) \geq U_{eff}(\mathbf{r_0})$. Pela diferenciabilidade de $U_{eff}$ o ponto é estacionário: um objeto de massa negligível nesse ponto realizará movimento circular uniforme ao redor do centro de massa do sistema.
 
 Para fins práticos, entretanto, existência é insatisfatória, mas motiva o cálculo desses pontos, dentre outros pontos estacionários do potencial efetivo, que serão justamente os pontos de Lagrange.
 
@@ -100,9 +98,6 @@ realiza um movimento circular uniforme cuja frequência é dada por:
 \end{equation}
 
 \section{Dedução dos pontos de Lagrange}
-
-% TODO Dedução os pontos L1, L2, L3, L4 e L5. Estabilidade dos pontos de Lagrange, valor de Gascheau.
-% https://map.gsfc.nasa.gov/ContentMedia/lagrange.pdf
 
 Interessa-nos agora analisar uma extensão do problema anterior, adicionando no sistema um terceiro corpo, de massa $m<<m_1,m_2$, de maneira que ele não perturbe a órbita original nem desloque o centro de massa do sistema. 
 
@@ -145,9 +140,9 @@ Onde,
 Escrevemos então a força resultante sobre o terceiro corpo:
 
 \begin{eqnarray}
-\mathbf{F_R} = & \mathbf{F_{IN}} + \mathbf{F_1} + \mathbf{F_2} & = 0 \\
-= & m\left[\omega^2\mathbf{r} -G(m_1+m_2)\left(\frac{\beta(\mathbf{r}-\mathbf{r_1})}{|\mathbf{r}-\mathbf{r_1}|^3} + \frac{\alpha(\mathbf{r}-\mathbf{r_2})}{|\mathbf{r}-\mathbf{r_2}|^3}\right) \right] & = 0 \\
-= & m\omega^2 \left[\left(x - \frac{\beta(x+\alpha R) R^3)}{((x+\alpha R)^2 + y^2)^{3/2}} - \frac{\alpha(x-\beta R) R^3)}{((x-\beta R)^2 + y^2)^{3/2}}\right)\mathbf{\hat{i}} + \left(y - \frac{y R^3}{((x+\alpha R)^2 + y^2)^{3/2}} - \frac{y R^3}{((x-\beta R)^2 + y^2)^{3/2}}\right)\mathbf{\hat{j}}\right] & =0
+\mathbf{F_R} &= \mathbf{F_{IN}} + \mathbf{F_1} + \mathbf{F_2} \\
+&= m\left[\omega^2\mathbf{r} -G(m_1+m_2)\left(\frac{\beta(\mathbf{r}-\mathbf{r_1})}{|\mathbf{r}-\mathbf{r_1}|^3} + \frac{\alpha(\mathbf{r}-\mathbf{r_2})}{|\mathbf{r}-\mathbf{r_2}|^3}\right) \right] \\
+&= m\omega^2 \left[\left(x - \frac{\beta(x+\alpha R) R^3)}{((x+\alpha R)^2 + y^2)^{3/2}} - \frac{\alpha(x-\beta R) R^3)}{((x-\beta R)^2 + y^2)^{3/2}}\right)\mathbf{\hat{i}} + \left(y - \frac{y R^3}{((x+\alpha R)^2 + y^2)^{3/2}} - \frac{y R^3}{((x-\beta R)^2 + y^2)^{3/2}}\right)\mathbf{\hat{j}}\right] =0
 \end{eqnarray}
 
 E queremos os pares ordenados (x,y) onde a força se anula. Vemos que não é trivial resolver esse sistema diretamente. Entretanto, podemos induzir as respostas levando em consideração suas simetrias.
@@ -222,12 +217,14 @@ Podemos associar à força resultante um potencial generalizado, tal que:
 \mathbf{F_R} = \mathbf{-\nabla} U + \frac{d}{dt}(\mathbf{\nabla _v}U)
 \end{equation}
 
-Onde os pontos de equilíbrio encontrados correspondem a pontos onde a variação do potencial é estacionária. Analisaremos agora o comportamento da órbita para pequenos deslocamentos dos pontos de equilíbrio. Considerando o i-ésimoponto de Lagrange:
+Onde os pontos de equilíbrio encontrados correspondem a pontos onde a variação do potencial é estacionária. Analisaremos agora o comportamento da órbita para pequenos deslocamentos dos pontos de equilíbrio. Considerando o $i$-ésimo ponto de Lagrange:
 
 \begin{eqnarray}
 x = x_i + \delta x, & \delta v_x \\
 y = y_i + \delta y, & \delta v_y
 \end{eqnarray}
+
+descrevemos a equação de movimento linearizada como
 
 \begin{equation}
 \frac{d}{dt}
@@ -251,6 +248,14 @@ y = y_i + \delta y, & \delta v_y
     \delta v_y
  \end{bmatrix}
 \end{equation}
+
+e, cientes de que para equações diferenciais da forma
+
+\begin{equation}
+    \dot{\mathbf{x}}(t) = A\mathbf{x}(t)
+\end{equation}
+
+a solução é $\mathbf{x}(t) = e^{At}$, buscamos diagonalizar a matriz de evolução. Se para algum autovalor $\lambda_i$ associado às velocidades tivermos que $\Re(\lambda_i) > 0$, a exponencial da matriz na base de autovetores, que nada mais será que $\text{diag}_i(e^{\lambda_i t})$, cresce exponencialmente na i-ésima coordenada, e portanto o ponto de Lagrange associado é instável. Caso contrário, o modelo linear é estável, pois em todas as direções a matriz ou tende a zero ou oscila.
 
 \subsection{Pontos L1 e L2}
 
@@ -330,11 +335,9 @@ A primeira condição é automaticamente satisfeita por considerarmos $\alpha <<
 m_1 \geq 25m_2\left(\dfrac{1+\sqrt{1-4/625}}{2}\right)
 \end{equation}
 
-\section{Generalizações}
-
-
-
 \section{Aplicações ao modelo de Roche}
+
+\subsection{Modelo de Roche}
 
 No estudo de sistemas binários de estrelas, um dos modelos fundamentais da estrela é o de Roche. Nele, modela-se a estrela hidrodinamicamente como um ponto contendo toda a sua massa cercado por um envelope de massa nula. O potencial generalizado é expresso, para uma das estrelas, num referencial baricêntrico rotacionando uniformemente com eixo $x$ no sentido que une os centros das duas estrelas, por
 
@@ -346,7 +349,7 @@ incluindo, agora, no último termo, efeitos de maré devido à companheira. A eq
 
 \begin{equation}
     \label{eq:rochemotion}
-    \ddot{\mathbf{r}}_1 = -\frac{1}{\rho}\nabla P - \nabla U_eff - 2\mathbf{\omega}\times\dot{\mathbf{r}}_1
+    \ddot{\mathbf{r}}_1 = -\frac{1}{\rho}\nabla P - \nabla U_{eff} - 2\mathbf{\omega}\times\dot{\mathbf{r}}_1
 \end{equation}
 
 onde $\rho$, a densidade volumar de massa da estrela, e $P$, a pressão do material na estrela, descrevem a hidrodinâmica do material estelar devido à rotação do corpo. Caso a velocidade angular de rotação da estrela $\Omega_1$ e a velocidade angular orbital do binário $\omega$ sejam iguais, não há movimento do elemento de massa no nosso referencial, reduzindo a \ref{eq:rochemotion} ao equilíbrio hidrostático
@@ -360,6 +363,8 @@ donde se conclui que a densidade e pressão, e portanto os formatos possíveis d
 
 Essa situação, que é o caso estático do binário de estrelas, admite, para órbitas não ecêntricas, pontos de Lagrange idênticos aos já descritos. O L1, por estar localizado entre as estrelas, descreve uma curva equipotencial limítrofe onde elas se tocam em um ponto, delimitando as regiões de captura gravitacional do material estelar, denominados \textit{lóbulos de Roche}, sendo que as regiões aproximadamente esféricas mais internas a cada objeto que caracterizam regiões de domínio gravitacionais são suas \textit{esferas de Hill}. Quando seus formatos excedem seus lóbulos de Roche, as estrelas passam a transferir massa entre si.
 
+\subsection{Caso quasi-estático}
+
 Mesmo em regimes fora das aproximações adotadas, com binários assíncronos e ecêntricos, é possível obter resultados bastante próximos para os pontos de Lagrange em certas situações. Com efeito, tomando o período do movimento interno de material, agora oscilatório devido à assíncronia,
 
 \begin{equation}
@@ -371,11 +376,13 @@ podemos definir a condição para um regime \textit{quasi-estático} do binário
 Sob essas hipóteses, é possível demonstrar \cite{nonsyncbin} que há pontos estacionários do potencial que são soluções da equação,
 
 \begin{equation}
-    \frac{m_1}{m_2}\frac{xD^2}{|x|^3}+\frac{\frac{x}{D}-1}{|\frac{x}{D}-1|^3}-\frac{x}{D}(1+\frac{m_1}{m_2})\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3}+1=0
+    \frac{m_1}{m_2}\frac{xD^2}{|x|^3}+\frac{\frac{x}{D}-1}{|\frac{x}{D}-1|^3}-\frac{x}{D}\left(1+\frac{m_1}{m_2}\right)\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3}+1=0
 \end{equation}
 
 e são análogos aos pontos L1, L2 e L3 do problema de três corpos circular planar. Os pontos triangulares L4 e L5 também podem ser determinados rigorosamente nesse tipo de sistema, com
 
 \begin{align}
-    x_{L4,5} = \left(\frac{D}{2}[\frac{m_1}{m_2(1 + m_1/m_2)\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3 - 1]^{2/3},\pm D\sqrt{\frac{x}{D}\left(2 - \frac{x}{D}\right)}\right)
+    x = \left(\frac{D}{2}\left(\frac{m_1}{m_2(1 + m_1/m_2)\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3} - 1}\right)^{2/3},\pm D\sqrt{\frac{x}{D}\left(2 - \frac{x}{D}\right)}\right)
 \end{align}
+
+e condições de estabilidade análogas ao caso circular.
