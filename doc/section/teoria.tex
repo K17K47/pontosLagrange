@@ -152,7 +152,20 @@ Escrevemos então a força resultante sobre o terceiro corpo:
 
 E queremos os pares ordenados (x,y) onde a força se anula. Vemos que não é trivial resolver esse sistema diretamente. Entretanto, podemos induzir as respostas levando em consideração suas simetrias.
 
+Considerando a simetria por reflexão no eixo x, temos que a função tem que se anular na reta $y=0$. Definimos:
 
+\begin{equation}
+x \equiv (u+\beta)R
+\end{equation}
+
+De maneira que u mede a distância do corpo até $m_2$ em unidades de R. A equação resulta em:
+
+\begin{eqnarray}
+R(u+\beta) - \frac{\beta R^4(u+\beta+\alpha)}{R^3(u+\beta+\alpha)^3}- \frac{\alpha R^4u}{R^3u} & = & 0 \\
+R\left[\frac{u^2(u+\beta+\alpha)^2(u+\beta)-\beta u^2 - \alpha(u+\beta+\alpha)^2}{u^2(u+\beta+\alpha)^2}\right] & = & 0 \label{poliu}
+\end{eqnarray}
+
+E o problema se passa a ser encontrar as raízes do polinômio de grau 5 no numerador da (\ref{poliu}), onde não há uma solução fechada. Nesse caso, consideraremos a hipótese $\alpha << 1$ e faremos uma aproximação de primeira ordem.
 
 \section{Generalizações}
 % TODO Discutir resultados recentes que generalizam a noção de ponto de Lagrange.
