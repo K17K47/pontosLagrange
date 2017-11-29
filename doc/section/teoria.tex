@@ -331,16 +331,15 @@ m_1 \geq 25m_2\left(\dfrac{1+\sqrt{1-4/625}}{2}\right)
 \end{equation}
 
 \section{Generalizações}
-% TODO Discutir resultados recentes que generalizam a noção de ponto de Lagrange.
-% http://iopscience.iop.org/article/10.1086/513736/meta
-% http://iopscience.iop.org/article/10.1086/423214/meta
 
-O estudo de pontos análogos ao de Lagrange para sistemas de três corpos continua até hoje. O objetivo dessa seção é apresentar qualitativamente resultados recentes relacionados em forma ou conteúdo à teoria abordada.
+
+
+\section{Aplicações ao modelo de Roche}
 
 No estudo de sistemas binários de estrelas, um dos modelos fundamentais da estrela é o de Roche. Nele, modela-se a estrela hidrodinamicamente como um ponto contendo toda a sua massa cercado por um envelope de massa nula. O potencial generalizado é expresso, para uma das estrelas, num referencial baricêntrico rotacionando uniformemente com eixo $x$ no sentido que une os centros das duas estrelas, por
 
 \begin{equation}
-    U_{eff, 1} = -\frac{Gm_1}{||\mathbf{r}_1||}-\frac{Gm_2}{||\mathbf{r}_2||}-\frac{1}{2}\omega^2(x^2 + y^2)+\frac{Gm_2x}{||\mathbf{r}_1 - \mathbf{r}_2||^2},
+    U_{eff, 1} = -\frac{Gm_1}{||\mathbf{r}_1||}-\frac{Gm_2}{||\mathbf{r}_2||}-\frac{1}{2}\Omega_1^2(x^2 + y^2)+\frac{Gm_2x}{||\mathbf{r}_1 - \mathbf{r}_2||^2},
 \end{equation}
 
 incluindo, agora, no último termo, efeitos de maré devido à companheira. A equação de movimento para um elemento da estrela, nessa situação, é
@@ -350,12 +349,33 @@ incluindo, agora, no último termo, efeitos de maré devido à companheira. A eq
     \ddot{\mathbf{r}}_1 = -\frac{1}{\rho}\nabla P - \nabla U_eff - 2\mathbf{\omega}\times\dot{\mathbf{r}}_1
 \end{equation}
 
-onde $\rho$, a densidade volumar de massa da estrela, e $P$, a pressão do material na estrela, descrevem a hidrodinâmica do material estelar devido à rotação do corpo. Caso o movimento orbital e a rotação da estrela sejam sincrônicos, não há movimento do elemento de massa no nosso referencial, reduzindo a \ref{eq:rochemotion} ao equilíbrio hidrostático
+onde $\rho$, a densidade volumar de massa da estrela, e $P$, a pressão do material na estrela, descrevem a hidrodinâmica do material estelar devido à rotação do corpo. Caso a velocidade angular de rotação da estrela $\Omega_1$ e a velocidade angular orbital do binário $\omega$ sejam iguais, não há movimento do elemento de massa no nosso referencial, reduzindo a \ref{eq:rochemotion} ao equilíbrio hidrostático
 
 \begin{equation}
+    \label{eq:staticroche}
     \frac{1}{\rho}\nabla P = -\nabla U_{eff, 1},
 \end{equation}
 
 donde se conclui que a densidade e pressão, e portanto os formatos possíveis da estrela, dependem unicamente do potencial, sendo dados pelas curvas equipotenciais.
 
-Essa situação, que é o caso estático do binário de estrelas, admite, para órbitas não ecêntricas, pontos de Lagrange idênticos aos já descritos. O L1, por estar localizado entre as estrelas, descreve uma curva equipotencial limítrofe onde elas se tocam em um ponto, delimitando as regiões de captura gravitacional do material estelar, denominados \textit{lóbulos de Roche}.
+Essa situação, que é o caso estático do binário de estrelas, admite, para órbitas não ecêntricas, pontos de Lagrange idênticos aos já descritos. O L1, por estar localizado entre as estrelas, descreve uma curva equipotencial limítrofe onde elas se tocam em um ponto, delimitando as regiões de captura gravitacional do material estelar, denominados \textit{lóbulos de Roche}, sendo que as regiões aproximadamente esféricas mais internas a cada objeto que caracterizam regiões de domínio gravitacionais são suas \textit{esferas de Hill}. Quando seus formatos excedem seus lóbulos de Roche, as estrelas passam a transferir massa entre si.
+
+Mesmo em regimes fora das aproximações adotadas, com binários assíncronos e ecêntricos, é possível obter resultados bastante próximos para os pontos de Lagrange em certas situações. Com efeito, tomando o período do movimento interno de material, agora oscilatório devido à assíncronia,
+
+\begin{equation}
+    T_{mare} = \frac{2\pi}{|\omega - \Omega_1|}
+\end{equation}
+
+podemos definir a condição para um regime \textit{quasi-estático} do binário, no qual a \ref{eq:staticroche} vale instantaneamente com boa aproximação, por $T_{mare} << T_{dinamico} = \sqrt{\frac{R_1^3}{2Gm_1}}$, onde $T_{dinamico} $, a escala dinâmica da estrela, mede a escala de tempo em que a estrela expandiria ou contrairia numa situação em que \label{eq:staticroche} não vale.
+
+Sob essas hipóteses, é possível demonstrar \cite{nonsyncbin} que há pontos estacionários do potencial que são soluções da equação,
+
+\begin{equation}
+    \frac{m_1}{m_2}\frac{xD^2}{|x|^3}+\frac{\frac{x}{D}-1}{|\frac{x}{D}-1|^3}-\frac{x}{D}(1+\frac{m_1}{m_2})\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3}+1=0
+\end{equation}
+
+e são análogos aos pontos L1, L2 e L3 do problema de três corpos circular planar. Os pontos triangulares L4 e L5 também podem ser determinados rigorosamente nesse tipo de sistema, com
+
+\begin{align}
+    x_{L4,5} = \left(\frac{D}{2}[\frac{m_1}{m_2(1 + m_1/m_2)\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3 - 1]^{2/3},\pm D\sqrt{\frac{x}{D}\left(2 - \frac{x}{D}\right)}\right)
+\end{align}
