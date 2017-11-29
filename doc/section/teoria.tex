@@ -174,9 +174,9 @@ u^2((1-s_1)+3u+3u^2+u^3) = \alpha(s_0 +2s_0u+(1+s_0-s_1)u^2+2u^3+u^4) \label{pol
 Onde $s_0$ corresponde ao sinal de $u$ e $s_1$, ao sinal de $u+1$. Os 3 casos possíveis para o par ordenado $(s_0,s_1)$ são $(-1,-1), (-1,1), (1,1)$, que correspondem, respectivamente, a posições à esquerda de $m_1$, entre $m_1$ e $m_2$ e à direita de $m_2$. Claramente o par $(1,-1)$ não pode ocorrer. Em cada caso, a equação (\ref{polia}) tem uma raiz real, que correspondem aos pontos.
 
 \begin{eqnarray}
-L1: & R\left[1-(\frac{\alpha}{3})^{1/3}\right]\mathbf{\hat{i}} \\
-L2: & R\left[1+(\frac{\alpha}{3})^{1/3}\right]\mathbf{\hat{i}} \\
-L3: & -R\left[1 + \frac{5}{12}\alpha \right]\mathbf{\hat{i}}
+L1: & R\left[1-\left(\dfrac{\alpha}{3}\right)^{1/3}\right]\mathbf{\hat{i}} \\
+L2: & R\left[1+\left(\dfrac{\alpha}{3}\right)^{1/3}\right]\mathbf{\hat{i}} \\
+L3: & -R\left[1 + \dfrac{5}{12}\alpha \right]\mathbf{\hat{i}}
 \end{eqnarray}
 
 Os pontos L4 e L5 não estão sobre o eixo, mas podem ser determinados procurando por pontos onde a componente radial da força gravitacional é anulada pela força centrífuga. Isso sugere uma decomposição da força total em termos paralelos e perpendiculares à posição, ou, em termos vetoriais, projeções de $\mathbf{F_R}$ nas direções $(x, y)$ e $(-y, x)$. A projeção perpendicular
@@ -189,7 +189,7 @@ nos dá, quando anulada, e portanto igualando os termos dos denominadores,
 
 \begin{equation}
     x = \frac{R\beta - R\alpha}{2} = \frac{r_1 - r_2}{2}
-\end{equation
+\end{equation}
 
 ou seja, a coordenada $x$ dos pontos que procuramos estão no ponto médio entre os objetos. Isso nos dá a projeção paralela
 
@@ -203,20 +203,132 @@ que anulada equivale a
     R^2=(x-R\beta)^2+y^2
 \end{equation}
 
-e torna-se claro que, como os pontos simultaneamente distam R de um dos (e portanto ambos os) corpos e os equidistam, localizam-se nos vértices dos dois triângulos equiláteros determinados pela aresta que liga os corpos no espaço, ou, escrito explícitamente,
+e torna-se claro que, como os pontos simultaneamente distam R de um dos (e portanto ambos os) corpos e os equidistam, localizam-se nos vértices dos dois triângulos equiláteros determinados pela aresta que liga os corpos no espaço, ou, escrito explicitamente,
 
 \begin{align}
-    L4: & \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}),\frac{\sqrt{3}}{2}R\right) \\
-    L5: & \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}),-\frac{\sqrt{3}}{2}R\right)
+    L4: & \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}\right),\frac{\sqrt{3}}{2}R\right) \\
+    L5: & \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}\right),-\frac{\sqrt{3}}{2}R\right)
 \end{align}
 
 \begin{equation}
-    -\alpha  (\alpha +\beta )^2+u^5+u^4 (2 \alpha +3 \beta )+u^3 \left(\alpha ^2+4 \alpha  \beta +3 \beta
-   ^2\right)+u^2 \left(\alpha ^2 \beta +2 \alpha  \beta ^2-\alpha +\beta ^3-\beta \right)-2 \alpha  u
-   (\alpha +\beta )
+    -\alpha  (\alpha +\beta )^2+u^5+u^4 (2 \alpha +3 \beta )+u^3 \left(\alpha ^2+4 \alpha  \beta +3 \beta^2\right)+u^2 \left(\alpha ^2 \beta +2 \alpha  \beta ^2-\alpha +\beta ^3-\beta \right)-2 \alpha  u (\alpha +\beta )
 \end{equation}
 
 \section{Estabilidade}
+
+Podemos associar à força resultante um potencial generalizado, tal que:
+
+\begin{equation}
+\mathbf{F_R} = \mathbf{-\nabla} U + \frac{d}{dt}(\mathbf{\nabla _v}U)
+\end{equation}
+
+Onde os pontos de equilíbrio encontrados correspondem a pontos onde a variação do potencial é estacionária. Analisaremos agora o comportamento da órbita para pequenos deslocamentos dos pontos de equilíbrio. Considerando o i-ésimoponto de Lagrange:
+
+\begin{eqnarray}
+x = x_i + \delta x, & \delta v_x \\
+y = y_i + \delta y, & \delta v_y
+\end{eqnarray}
+
+\begin{equation}
+\frac{d}{dt}
+  \begin{bmatrix}
+    \delta x \\
+    \delta y \\
+    \delta v_x \\
+    \delta v_y
+ \end{bmatrix}
+=
+ \begin{bmatrix}
+   0 & 0 & 1 & 0 \\
+   0 & 0 & 0 & 1 \\
+   \dfrac{1}{m} \dfrac{\partial ^2U}{\partial x^2} & \dfrac{1}{m} \dfrac{\partial ^2U}{\partial x\partial y} & 0 & 2\omega \\
+   \dfrac{1}{m} \dfrac{\partial ^2U}{\partial y \partial x} & \dfrac{1}{m} \dfrac{\partial ^2U}{\partial y^2} & 2\omega & 0
+ \end{bmatrix}
+   \begin{bmatrix}
+    \delta x \\
+    \delta y \\
+    \delta v_x \\
+    \delta v_y
+ \end{bmatrix}
+\end{equation}
+
+\subsection{Pontos L1 e L2}
+
+Nos pontos L1 e L2, temos:
+
+\begin{equation}
+\dfrac{\partial ^2U}{\partial x^2} = \mp 9\omega^2 \;, \qquad \qquad \dfrac{\partial ^2}{\partial y^2} = \pm 3\omega^2 \;, \qquad \qquad \dfrac{\partial ^2U}{\partial x\partial y} = \dfrac{\partial ^2U}{\partial y\partial x} = 0
+\end{equation}
+
+\vspace{10px}
+
+Os autovalores da matriz então resultam em:
+
+\vspace{-13px}
+
+\begin{align}
+\lambda_{\pm} = \pm \omega \sqrt{1+2\sqrt{7}} && \sigma_{\pm} = \pm i\omega \sqrt{2\sqrt{7}-1}
+\end{align}
+
+O autovalor positivo $\lambda_+$ indica a presença de uma solução que diverge exponencialmente dos pontos de equilíbrio, o que significa que uma órbita nos pontos L1 e L2 é instável. O tempo característico da divergência é:
+
+\begin{equation}
+\tau = \frac{1}{\lambda_+} \approx \frac{2}{5\omega}
+\end{equation}
+
+\subsection{Ponto L3}
+
+Já no ponto L3, as derivadas resultam:
+
+\begin{equation}
+\dfrac{\partial ^2U}{\partial x^2} = -3\omega^2 \;, \qquad \qquad \dfrac{\partial ^2}{\partial y^2} = \frac{7m_2}{8m_1}\omega^2 \;, \qquad \qquad \dfrac{\partial ^2U}{\partial x\partial y} = \dfrac{\partial ^2U}{\partial y\partial x} = 0
+\end{equation}
+
+E os autovalores equivalentes são:
+
+\begin{align}
+\lambda_{\pm} = \pm \omega \left(\dfrac{3m_1}{8m_2}\right)^{1/2} && \sigma_{\pm} = \pm i\sqrt{7}
+\end{align}
+
+Novamente, temos um autovalor real e positivo, de maneira que L3 também é estável.
+
+\subsection{Pontos L4 e L5}
+
+Esses dois últimos pontos são um caso curioso no que se refere à sua estabilidade. Ambos são pontos de máximo do potencial $U$, o que normalmente indicaria instabilidade. O que ocorre de fato é que, para uma massa em repouso na vizinhança de um desses pontos, ela inicialmente se afasta do ponto; entretanto, ao ganhar velocidade, ela passa a estar sujeita à força de Coriolis, que a faz realizar uma órbita em torno do ponto de Lagrange.
+
+Para esses pontos, temos os valores:
+
+\begin{equation}
+\dfrac{\partial ^2U}{\partial x^2} = \dfrac{3}{4}\omega^2 \;, \qquad \qquad \dfrac{\partial ^2}{\partial y^2} = \dfrac{9}{4}\omega^2 \;, \qquad \qquad \dfrac{\partial ^2U}{\partial x\partial y} = \dfrac{\partial ^2U}{\partial y\partial x} = \dfrac{3\sqrt{3}}{4}\gamma \omega^2
+\end{equation}
+
+\vspace{20px}
+
+Onde definimos: 
+
+\vspace{-35px}
+
+\begin{equation*}
+\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\!\! \gamma = \dfrac{m_1-m_2}{m_1+m_2}
+\end{equation*}
+
+E, os autovalores correspondentes são:
+
+\begin{align}
+\lambda_{\pm} = \pm \frac{i}{2} \omega \sqrt{2-\sqrt{27\gamma^2-23}} && \sigma_{\pm} = \pm \frac{i}{2} \omega \sqrt{2 +\sqrt{27\gamma^2 - 23}}
+\end{align}
+
+Os pontos serão estáveis se os autavalores forem puramente imaginários. Para isso devem ser satisfeitas as condições:
+
+\begin{align}
+\gamma^2 \geq \frac{23}{27} && \text{e} && \sqrt{27\gamma^2 -23} \leq 2
+\end{align}
+
+A primeira condição é automaticamente satisfeita por considerarmos $\alpha << 1$ na seção (2.3). A segunda condição resulta em:
+
+\begin{equation}
+m_1 \geq 25m_2\left(\dfrac{1+\sqrt{1-4/625}}{2}\right)
+\end{equation}
 
 \section{Generalizações}
 % TODO Discutir resultados recentes que generalizam a noção de ponto de Lagrange.
