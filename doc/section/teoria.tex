@@ -46,10 +46,10 @@ Sistemas gravitacionais de mais de dois corpos são, por outro lado, impossívei
 
 Trata-se de uma situação consideravelmente mais complexa que a de poucos corpos, uma vez que não há mais conservação de momento angular, a possibilidade de colisões gera singularidades nas soluções e o desacoplamento das equações não é possível. Apesar disso, é possível analisar e resolver sistemas de $n$-corpos, especialmente na presença de restrições e aproximações adequadas.
 
-Os pontos de Lagrange emergem naturalmente na análise de um problema de três corpos como uma extensão do problema de Kepler: Sendo $a$ a distância entre dois objetos de massas $m_1$ e $m_2$, tomamos um referencial baricêntrico que gira com velocidade angular constante $\omega$ igual à orbital
+Os pontos de Lagrange emergem naturalmente na análise de um problema de três corpos como uma extensão do problema de Kepler circular: Sendo $R$ a distância entre dois objetos de massas $m_1$ e $m_2$, tomamos um referencial baricêntrico que gira com velocidade angular constante $\omega$ igual à orbital
 
 \begin{equation}
-    \omega^2 = \frac{G(m_1 + m_2)}{2\pi a^3}
+    \omega^2 = \frac{G(m_1 + m_2)}{R^3}
 \end{equation}
 
 Caso um corpo estacionário de massa $m$ seja inserido nesse sistema, preservando coplanaridade, observar-se-á agindo sobre ele uma força centrífuga (e, caso se movimentasse, também uma força de Coriolis. Garantidamente não há força de Euler nesse tratamento), de forma que o potencial efetivo se torna
@@ -64,11 +64,9 @@ e escolhendo um ponto no espaço $\mathbf{r_0} \neq \mathbf{r}_i$, observamos qu
     \Lambda &= \{\mathbf{r} | U_{eff}(\mathbf{r}) \geq U_{eff}(\mathbf{r_0}) - \epsilon\}
 \end{align}
 
-é, para $\epsilon > 0$, fechado e, como U_{eff} tende a $-\infty$ pra $||\mathbf{r}||$ grande, limitado e portanto compacto,. Assim, a função atinge nele um máximo $\mathbf{r_M}$. $\mathbf{r_M}$ está necessariamente contido no interior de $\Lambda$, já que $U_{eff}(\mathbf{r_M}) \geq U_{eff}(\mathbf{r_0})$. Pela diferenciabilidade de $U_{eff}$ o ponto é estacionário: um objeto de massa negligível nesse ponto realizará movimento circular uniforme ao redor do centro de massa do sistema.
+é, para $\epsilon > 0$, fechado e, como $U_{eff}$ tende a $-\infty$ pra $||\mathbf{r}||$ grande, limitado e portanto compacto. Assim, a função atinge nele um máximo $\mathbf{r_M}$. $\mathbf{r_M}$ está necessariamente contido no interior de $\Lambda$, já que $U_{eff}(\mathbf{r_M}) \geq U_{eff}(\mathbf{r_0})$. Pela diferenciabilidade de $U_{eff}$ o ponto é estacionário: um objeto de massa negligível nesse ponto realizará movimento circular uniforme ao redor do centro de massa do sistema.
 
 Para fins práticos, entretanto, existência é insatisfatória, mas motiva o cálculo desses pontos, dentre outros pontos estacionários do potencial efetivo, que serão justamente os pontos de Lagrange.
-
-.						.						.
 
 \section{Problema restrito de 2 corpos}
 
@@ -205,10 +203,6 @@ e torna-se claro que, como os pontos simultaneamente distam R de um dos (e porta
     L5: & \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}\right),-\frac{\sqrt{3}}{2}R\right)
 \end{align}
 
-\begin{equation}
-    -\alpha  (\alpha +\beta )^2+u^5+u^4 (2 \alpha +3 \beta )+u^3 \left(\alpha ^2+4 \alpha  \beta +3 \beta^2\right)+u^2 \left(\alpha ^2 \beta +2 \alpha  \beta ^2-\alpha +\beta ^3-\beta \right)-2 \alpha  u (\alpha +\beta )
-\end{equation}
-
 \section{Estabilidade}
 
 Podemos associar à força resultante um potencial generalizado, tal que:
@@ -295,7 +289,7 @@ E os autovalores equivalentes são:
 \lambda_{\pm} = \pm \omega \left(\dfrac{3m_1}{8m_2}\right)^{1/2} && \sigma_{\pm} = \pm i\sqrt{7}
 \end{align}
 
-Novamente, temos um autovalor real e positivo, de maneira que L3 também é estável.
+Novamente, temos um autovalor real e positivo, de maneira que L3 também é instável.
 
 \subsection{Pontos L4 e L5}
 
@@ -323,7 +317,7 @@ E, os autovalores correspondentes são:
 \lambda_{\pm} = \pm \frac{i}{2} \omega \sqrt{2-\sqrt{27\gamma^2-23}} && \sigma_{\pm} = \pm \frac{i}{2} \omega \sqrt{2 +\sqrt{27\gamma^2 - 23}}
 \end{align}
 
-Os pontos serão estáveis se os autavalores forem puramente imaginários. Para isso devem ser satisfeitas as condições:
+Os pontos serão estáveis se os autovalores forem puramente imaginários. Para isso devem ser satisfeitas as condições:
 
 \begin{align}
 \gamma^2 \geq \frac{23}{27} && \text{e} && \sqrt{27\gamma^2 -23} \leq 2
@@ -342,7 +336,7 @@ m_1 \geq 25m_2\left(\dfrac{1+\sqrt{1-4/625}}{2}\right)
 No estudo de sistemas binários de estrelas, um dos modelos fundamentais da estrela é o de Roche. Nele, modela-se a estrela hidrodinamicamente como um ponto contendo toda a sua massa cercado por um envelope de massa nula. O potencial generalizado é expresso, para uma das estrelas, num referencial baricêntrico rotacionando uniformemente com eixo $x$ no sentido que une os centros das duas estrelas, por
 
 \begin{equation}
-    U_{eff, 1} = -\frac{Gm_1}{||\mathbf{r}_1||}-\frac{Gm_2}{||\mathbf{r}_2||}-\frac{1}{2}\Omega_1^2(x^2 + y^2)+\frac{Gm_2x}{||\mathbf{r}_1 - \mathbf{r}_2||^2},
+    U_{eff} = -\frac{Gm_1}{||\mathbf{r}_1||}-\frac{Gm_2}{||\mathbf{r}_2||}-\frac{1}{2}\Omega_1^2(x^2 + y^2)+\frac{Gm_2x}{||\mathbf{r}_1 - \mathbf{r}_2||^2},
 \end{equation}
 
 incluindo, agora, no último termo, efeitos de maré devido à companheira. A equação de movimento para um elemento da estrela, nessa situação, é
@@ -356,7 +350,7 @@ onde $\rho$, a densidade volumar de massa da estrela, e $P$, a pressão do mater
 
 \begin{equation}
     \label{eq:staticroche}
-    \frac{1}{\rho}\nabla P = -\nabla U_{eff, 1},
+    \frac{1}{\rho}\nabla P = -\nabla U_{eff},
 \end{equation}
 
 donde se conclui que a densidade e pressão, e portanto os formatos possíveis da estrela, dependem unicamente do potencial, sendo dados pelas curvas equipotenciais.
@@ -373,7 +367,7 @@ Mesmo em regimes fora das aproximações adotadas, com binários assíncronos e 
 
 podemos definir a condição para um regime \textit{quasi-estático} do binário, no qual a \ref{eq:staticroche} vale instantaneamente com boa aproximação, por $T_{mare} << T_{dinamico} = \sqrt{\frac{R_1^3}{2Gm_1}}$, onde $T_{dinamico} $, a escala dinâmica da estrela, mede a escala de tempo em que a estrela expandiria ou contrairia numa situação em que \label{eq:staticroche} não vale.
 
-Sob essas hipóteses, é possível demonstrar \cite{nonsyncbin} que há pontos estacionários do potencial que são soluções da equação,
+Sob essas hipóteses, é possível demonstrar \cite{nonsyncbin} que há pontos estacionários do potencial com $y = 0$ que são soluções da equação,
 
 \begin{equation}
     \frac{m_1}{m_2}\frac{xD^2}{|x|^3}+\frac{\frac{x}{D}-1}{|\frac{x}{D}-1|^3}-\frac{x}{D}\left(1+\frac{m_1}{m_2}\right)\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3}+1=0
@@ -382,7 +376,7 @@ Sob essas hipóteses, é possível demonstrar \cite{nonsyncbin} que há pontos e
 e são análogos aos pontos L1, L2 e L3 do problema de três corpos circular planar. Os pontos triangulares L4 e L5 também podem ser determinados rigorosamente nesse tipo de sistema, com
 
 \begin{align}
-    x = \left(\frac{D}{2}\left(\frac{m_1}{m_2(1 + m_1/m_2)\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3} - 1}\right)^{2/3},\pm D\sqrt{\frac{x}{D}\left(2 - \frac{x}{D}\right)}\right)
+    (x, y) = \left(\frac{D}{2}\left(\frac{m_1}{m_2(1 + m_1/m_2)\frac{f^2(1+e)^4}{(1+e\cos(\theta - \theta_0))^3} - 1}\right)^{2/3},\pm D\sqrt{\frac{x}{D}\left(2 - \frac{x}{D}\right)}\right)
 \end{align}
 
 e condições de estabilidade análogas ao caso circular.
