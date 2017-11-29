@@ -10,7 +10,7 @@ Dois corpos massivos ocupando posições diferentes no espaço sofrem uma atraç
 Mas o espaço é homogêneo, e o movimento do sistema pode depender apenas das posições relativas dos objetos. Isso motiva que se defina
 
 \begin{align}
-    \mathbf{r} &= \mathbf{r}_1 - \mathbf{r}_2 && \mu = \frac{m_1m_2}{m_1 + m_2}
+    \mathbf{r} &= \mathbf{r}_1 - \mathbf{r}_2 && \mu &= \frac{m_1m_2}{m_1 + m_2}
 \end{align}
 
 e as equações de movimento se reduzem a
@@ -29,10 +29,16 @@ conclui-se que num referencial baricêntrico o problema de dois corpos é simple
 
 \begin{equation}
     \label{eq:binet}
-    \frac{d^2u}{d\theta^2} + u = -\frac{\mu}{\mathbf{L}^2}\frac{d}{du}\left( U + \frac{\mathbf{L}^2u^2}{2\mu}\right).
+    \frac{d^2u}{d\theta^2} + u = -\frac{\mu}{\mathbf{L}^2}\frac{d}{du}U\left(\frac{1}{u}\right).
 \end{equation}
 
-Assim, obtem-se a trajetória e, com algum esforço, a evolução temporal do sistema. Sistemas gravitacionais de mais de dois corpos são, contudo, impossíveis de se resolver analiticamente no caso geral. Num sistema de $n$ partículas interagindo entre si exclusivamente gravitacionalmente, a equação de movimento da $i$-ésima partícula é 
+Assim, obtem-se a trajetória e, com algum esforço, a evolução temporal do sistema. Sistemas de dois corpos ou de um corpo (caso limite para um dos corpos muito mais massivo que o outro) admitem, em situações de energia negativa, órbitas elípticas
+
+\begin{equation}
+    r(\theta) = \frac{a(1 - e^2)}{1 + e\cos (\theta - \theta_0)}.
+\end{equation}
+
+Sistemas gravitacionais de mais de dois corpos são, por outro lado, impossíveis de se resolver analiticamente no caso geral. Num sistema de $n$ partículas interagindo entre si exclusivamente gravitacionalmente, a equação de movimento da $i$-ésima partícula é 
 
 \begin{equation}
     \ddot{\mathbf{r}}_i=-\sum_{\substack{j=1\\j \neq i}}^{n} \frac{Gm_j(\mathbf{r}_j - \mathbf{r}_i)}{||\mathbf{r}_j - \mathbf{r}_i||^3}.
@@ -71,3 +77,30 @@ Para fins práticos, entretanto, existência é insatisfatória, mas motiva o c�
 % TODO Discutir resultados recentes que generalizam a noção de ponto de Lagrange.
 % http://iopscience.iop.org/article/10.1086/513736/meta
 % http://iopscience.iop.org/article/10.1086/423214/meta
+
+O estudo de pontos análogos ao de Lagrange para sistemas de três corpos continua até hoje. O objetivo dessa seção é apresentar qualitativamente resultados recentes relacionados em forma ou conteúdo à teoria abordada.
+
+No estudo de sistemas binários de estrelas, um dos modelos fundamentais da estrela é o de Roche. Nele, modela-se a estrela hidrodinamicamente como um ponto contendo toda a sua massa cercado por um envelope de massa nula, traçando, portanto, . O potencial generalizado é expresso, para uma das estrelas, num referencial baricêntrico rotacionando uniformemente com eixo $x$ no sentido que une os centros das duas estrelas, por
+
+\begin{equation}
+    U_{eff, 1} = -\frac{Gm_1}{||\mathbf{r}_1||}-\frac{Gm_2}{||\mathbf{r}_2||}-\frac{1}{2}\omega^2(x^2 + y^2)+\frac{Gm_2x}{||\mathbf{r}_1 - \mathbf{r}_2||^2},
+\end{equation}
+
+incluindo, agora, no último termo, efeitos de maré devido à companheira. A equação de movimento para um elemento da estrela, nessa situação, é
+
+\begin{equation}
+    \label{eq:rochemotion}
+    \ddot{\mathbf{r}}_1 = -\frac{1}{\rho}\nabla P - \nabla U_eff - 2\mathbf{\omega}\times\dot{\mathbf{r}}_1
+\end{equation}
+
+onde $\rho$, a densidade volumar de massa da estrela, e $P$, a pressão do material na estrela, descrevem a hidrodinâmica do material estelar devido à rotação do corpo. Caso o movimento orbital e a rotação da estrela sejam sincrônicos, não há movimento do elemento de massa no nosso referencial, reduzindo a \ref{eq:rochemotion} ao equilíbrio hidrostático
+
+\begin{equation}
+    \frac{1}{\rho}\nabla P = -\nabla U_{eff, 1},
+\end{equation}
+
+donde se conclui que a densidade e pressão, e portanto os formatos possíveis da estrela, dependem unicamente do potencial, sendo dados pelas curvas equipotenciais.
+
+Essa situação, que é o caso estático do binário de estrelas, admite, para órbitas não ecêntricas, pontos de Lagrange essencialmente idênticos aos já descritos.
+
+% TODO Discussão do lóbulo de Roche talvez?
