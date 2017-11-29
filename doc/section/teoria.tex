@@ -165,7 +165,19 @@ R(u+\beta) - \frac{\beta R^4(u+\beta+\alpha)}{R^3(u+\beta+\alpha)^3}- \frac{\alp
 R\left[\frac{u^2(u+\beta+\alpha)^2(u+\beta)-\beta u^2 - \alpha(u+\beta+\alpha)^2}{u^2(u+\beta+\alpha)^2}\right] & = & 0 \label{poliu}
 \end{eqnarray}
 
-E o problema se passa a ser encontrar as raízes do polinômio de grau 5 no numerador da (\ref{poliu}), onde não há uma solução fechada. Nesse caso, consideraremos a hipótese $\alpha << 1$ e faremos uma aproximação de primeira ordem.
+E o problema se passa a ser encontrar as raízes do polinômio de grau 5 no numerador da (\ref{poliu}), onde não há uma solução fechada. Nesse caso, consideraremos a hipótese $\alpha << 1$, de maneira que só consideraremos termos de primeira ordem. Nesse caso, podemos reescrever o polinômio como:
+
+\begin{equation}
+u^2((1-s_1)+3u+3u^2+u^3) = \alpha(s_0 +2s_0u+(1+s_0-s_1)u^2+2u^3+u^4) \label{polia}
+\end{equation}
+
+Onde $s_0$ corresponde ao sinal de $u$ e $s_1$, ao sinal de $u+1$. Os 3 casos possíveis para o par ordenado $(s_0,s_1)$ são $(-1,-1), (-1,1), (1,1)$, que correspondem, respectivamente, a posições à esquerda de $m_1$, entre $m_1$ e $m_2$ e à direita de $m_2$. Claramente o par $(1,-1)$ não pode ocorrer. Em cada caso, a equação (\ref{polia}) tem uma raiz real, que correspondem aos pontos.
+
+\begin{eqnarray}
+L1: & R\left[1-(\frac{\alpha}{3})^{1/3}\right]\mathbf{\hat{i}} \\
+L2: & R\left[1+(\frac{\alpha}{3})^{1/3}\right]\mathbf{\hat{i}} \\
+L3: & -R\left[1 + \frac{5}{12}\alpha \right]\mathbf{\hat{i}}
+\end{eqnarray}
 
 \section{Generalizações}
 % TODO Discutir resultados recentes que generalizam a noção de ponto de Lagrange.
