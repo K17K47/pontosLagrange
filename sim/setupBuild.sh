@@ -7,6 +7,6 @@ git clone https://github.com/K17K47/physicsFrmwk.git
 echo "Compilando..."
 mkdir physicsFrmwk/build
 cd physicsFrmwk/build
-../configure && make
+../configure && make -j4
 echo "Feito!"
 
