@@ -152,7 +152,42 @@ Escrevemos então a força resultante sobre o terceiro corpo:
 
 E queremos os pares ordenados (x,y) onde a força se anula. Vemos que não é trivial resolver esse sistema diretamente. Entretanto, podemos induzir as respostas levando em consideração suas simetrias.
 
+Os pontos L4 e L5 não estão sobre o eixo, mas podem ser determinados procurando por pontos onde a componente radial da força gravitacional é anulada pela força centrífuga. Isso sugere uma decomposição da força total em termos paralelos e perpendiculares à posição, ou, em termos vetoriais, projeções de $\mathbf{F_R}$ nas direções $(x, y)$ e $(-y, x)$. A projeção perpendicular
 
+\begin{align}
+    F_R^\perp &= \alpha\beta y \omega^2R^3\left( \frac{1}{((x-R\beta)^2+y^2)^{3/2}} - \frac{1}{((x + R\alpha)^2+y^2)^{3/2}} \right)
+\end{align}
+
+nos dá, quando anulada, e portanto igualando os termos dos denominadores,
+
+\begin{equation}
+    x = \frac{R\beta - R\alpha}{2} = \frac{r_1 - r_2}{2}
+\end{equation
+
+ou seja, a coordenada $x$ dos pontos que procuramos estão no ponto médio entre os objetos. Isso nos dá a projeção paralela
+
+\begin{equation}
+    F_R^\parallel = \omega^2\frac{x^2 + y^2}{R}\left( \frac{1}{R^3} - \frac{1}{((x-R\beta)^2 + y^2)^{3/2}}\right),
+\end{equation}
+
+que anulada equivale a
+
+\begin{equation}
+    R^2=(x-R\beta)^2+y^2
+\end{equation}
+
+e torna-se claro que, como os pontos simultaneamente distam R de um dos (e portanto ambos os) corpos e os equidistam, localizam-se nos vértices dos dois triângulos equiláteros determinados pela aresta que liga os corpos no espaço, ou, escrito explícitamente,
+
+\begin{align}
+    L4&: && \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}),\frac{\sqrt{3}}{2}R\right) \\
+    L5&: && \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}),-\frac{\sqrt{3}}{2}R\right)
+\end{align}
+
+\begin{equation}
+    -\alpha  (\alpha +\beta )^2+u^5+u^4 (2 \alpha +3 \beta )+u^3 \left(\alpha ^2+4 \alpha  \beta +3 \beta
+   ^2\right)+u^2 \left(\alpha ^2 \beta +2 \alpha  \beta ^2-\alpha +\beta ^3-\beta \right)-2 \alpha  u
+   (\alpha +\beta )
+\end{equation}
 
 \section{Generalizações}
 % TODO Discutir resultados recentes que generalizam a noção de ponto de Lagrange.
@@ -161,7 +196,7 @@ E queremos os pares ordenados (x,y) onde a força se anula. Vemos que não é tr
 
 O estudo de pontos análogos ao de Lagrange para sistemas de três corpos continua até hoje. O objetivo dessa seção é apresentar qualitativamente resultados recentes relacionados em forma ou conteúdo à teoria abordada.
 
-No estudo de sistemas binários de estrelas, um dos modelos fundamentais da estrela é o de Roche. Nele, modela-se a estrela hidrodinamicamente como um ponto contendo toda a sua massa cercado por um envelope de massa nula, traçando, portanto, . O potencial generalizado é expresso, para uma das estrelas, num referencial baricêntrico rotacionando uniformemente com eixo $x$ no sentido que une os centros das duas estrelas, por
+No estudo de sistemas binários de estrelas, um dos modelos fundamentais da estrela é o de Roche. Nele, modela-se a estrela hidrodinamicamente como um ponto contendo toda a sua massa cercado por um envelope de massa nula. O potencial generalizado é expresso, para uma das estrelas, num referencial baricêntrico rotacionando uniformemente com eixo $x$ no sentido que une os centros das duas estrelas, por
 
 \begin{equation}
     U_{eff, 1} = -\frac{Gm_1}{||\mathbf{r}_1||}-\frac{Gm_2}{||\mathbf{r}_2||}-\frac{1}{2}\omega^2(x^2 + y^2)+\frac{Gm_2x}{||\mathbf{r}_1 - \mathbf{r}_2||^2},
@@ -182,6 +217,4 @@ onde $\rho$, a densidade volumar de massa da estrela, e $P$, a pressão do mater
 
 donde se conclui que a densidade e pressão, e portanto os formatos possíveis da estrela, dependem unicamente do potencial, sendo dados pelas curvas equipotenciais.
 
-Essa situação, que é o caso estático do binário de estrelas, admite, para órbitas não ecêntricas, pontos de Lagrange essencialmente idênticos aos já descritos.
-
-% TODO Discussão do lóbulo de Roche talvez?
+Essa situação, que é o caso estático do binário de estrelas, admite, para órbitas não ecêntricas, pontos de Lagrange idênticos aos já descritos. O L1, por estar localizado entre as estrelas, descreve uma curva equipotencial limítrofe onde elas se tocam em um ponto, delimitando as regiões de captura gravitacional do material estelar, denominados \textit{lóbulos de Roche}.
