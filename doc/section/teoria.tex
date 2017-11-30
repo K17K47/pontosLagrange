@@ -250,7 +250,7 @@ e, cientes de que para equações diferenciais da forma
     \dot{\mathbf{x}}(t) = A\mathbf{x}(t)
 \end{equation}
 
-a solução é $\mathbf{x}(t) = e^{At}$, buscamos diagonalizar a matriz de evolução. Se para algum autovalor $\lambda_i$ associado às velocidades tivermos que $\Re(\lambda_i) > 0$, a exponencial da matriz na base de autovetores, que nada mais será que $\text{diag}_i(e^{\lambda_i t})$, cresce exponencialmente na i-ésima coordenada, e portanto o ponto de Lagrange associado é instável. Caso contrário, o modelo linear é estável, pois em todas as direções a matriz ou tende a zero ou oscila.
+a solução é $\mathbf{x}(t) = e^{At}$, buscamos diagonalizar a matriz de evolução. Se para algum autovalor, também denominado expoente de Lyapunov, $\lambda_i$ associado às velocidades tivermos que $\Re(\lambda_i) > 0$, a exponencial da matriz na base de autovetores, que nada mais será que $\text{diag}_i(e^{\lambda_i t})$, cresce exponencialmente na i-ésima coordenada, e portanto o ponto de Lagrange associado é instável. Caso contrário, o modelo linear é estável, pois em todas as direções a matriz ou tende a zero ou oscila.
 
 \subsection{Pontos L1 e L2}
 
@@ -290,7 +290,7 @@ E os autovalores equivalentes são:
 \lambda_{\pm} = \pm \omega \left(\dfrac{3m_1}{8m_2}\right)^{1/2} && \sigma_{\pm} = \pm i\sqrt{7}
 \end{align}
 
-Novamente, temos um autovalor real e positivo, de maneira que L3 também é instável.
+Novamente, temos um autovalor real e positivo, de maneira que L3 também é instável. Observe que, como o expoente de Lyapunov depende da proporção entre massas nesse caso, ele pode ser consideravelmente menor do que os dos pontos L1 e L2, e portanto o L3 pode possuir tempos característicos maiores e órbitas bem mais estáveis do que as em torno do L1 e L2. Isso é particularmente verdadeiro em casos como o Terra-Sol, onde o tempo característico do L1 e do L2 é da ordem de 23 dias enquanto o do L3 é da ordem de 150 anos.
 
 \subsection{Pontos L4 e L5}
 
