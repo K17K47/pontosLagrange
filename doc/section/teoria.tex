@@ -44,7 +44,7 @@ Sistemas gravitacionais de mais de dois corpos são, por outro lado, impossívei
     \ddot{\mathbf{r}}_i=-\sum_{\substack{j=1\\j \neq i}}^{n} \frac{Gm_j(\mathbf{r}_j - \mathbf{r}_i)}{||\mathbf{r}_j - \mathbf{r}_i||^3}.
 \end{equation} 
 
-Trata-se de uma situação consideravelmente mais complexa que a de poucos corpos, uma vez que não há mais conservação de momento angular, a possibilidade de colisões gera singularidades nas soluções e o desacoplamento das equações não é possível. Apesar disso, é possível analisar e resolver sistemas de $n$-corpos, especialmente na presença de restrições e aproximações adequadas.
+Trata-se de uma situação consideravelmente mais complexa que a de poucos corpos, uma vez que não há mais conservação de momento angular de cada partícula, a possibilidade de colisões gera singularidades nas soluções e o desacoplamento das equações não é possível. Apesar disso, é possível analisar e resolver sistemas de $n$-corpos, especialmente na presença de restrições e aproximações adequadas.
 
 Os pontos de Lagrange emergem naturalmente na análise de um problema de três corpos como uma extensão do problema de Kepler circular: Sendo $R$ a distância entre dois objetos de massas $m_1$ e $m_2$, tomamos um referencial baricêntrico que gira com velocidade angular constante $\omega$ igual à orbital
 
@@ -55,16 +55,16 @@ Os pontos de Lagrange emergem naturalmente na análise de um problema de três c
 Caso um corpo estacionário de massa $m$ seja inserido nesse sistema, preservando coplanaridade, observar-se-á agindo sobre ele uma força centrífuga (e, caso se movimentasse, também uma força de Coriolis. Garantidamente não há força de Euler nesse tratamento), de forma que o potencial efetivo se torna
 
 \begin{equation}
-    U_{eff}(\mathbf{r}) = - \frac{Gmm_i}{||\mathbf{r} - \mathbf{r}_1||} - \frac{Gmm_i}{||\mathbf{r} - \mathbf{r}_2||} - \frac{1}{2}\mathbf{r}^2\omega^2
+    U_{ef}(\mathbf{r}) = - \frac{Gmm_i}{||\mathbf{r} - \mathbf{r}_1||} - \frac{Gmm_i}{||\mathbf{r} - \mathbf{r}_2||} - \frac{1}{2}\mathbf{r}^2\omega^2
 \end{equation}
 
 e escolhendo um ponto no espaço $\mathbf{r_0} \neq \mathbf{r}_i$, observamos que o conjunto
 
 \begin{align} 
-    \Lambda &= \{\mathbf{r} | U_{eff}(\mathbf{r}) \geq U_{eff}(\mathbf{r_0}) - \epsilon\}
+    \Lambda &= \{\mathbf{r} | U_{ef}(\mathbf{r}) \geq U_{ef}(\mathbf{r_0}) - \epsilon\}
 \end{align}
 
-é, para $\epsilon > 0$, fechado e, como $U_{eff}$ tende a $-\infty$ pra $||\mathbf{r}||$ grande, limitado e portanto compacto. Assim, a função atinge nele um máximo $\mathbf{r_M}$. $\mathbf{r_M}$ está necessariamente contido no interior de $\Lambda$, já que $U_{eff}(\mathbf{r_M}) \geq U_{eff}(\mathbf{r_0})$. Pela diferenciabilidade de $U_{eff}$ o ponto é estacionário: um objeto de massa negligível nesse ponto realizará movimento circular uniforme ao redor do centro de massa do sistema.
+é, para $\epsilon > 0$, fechado e, como $U_{eff}$ tende a $-\infty$ pra $||\mathbf{r}||$ grande, limitado e portanto compacto. Assim, a função atinge nele um máximo $\mathbf{r_M}$. $\mathbf{r_M}$ está necessariamente contido no interior de $\Lambda$, já que $U_{ef}(\mathbf{r_M}) \geq U_{ef}(\mathbf{r_0})$. Pela diferenciabilidade de $U_{ef}$ o ponto é estacionário: um objeto de massa negligível nesse ponto realizará movimento circular uniforme ao redor do centro de massa do sistema.
 
 Para fins práticos, entretanto, existência é insatisfatória, mas motiva o cálculo desses pontos, dentre outros pontos estacionários do potencial efetivo, que serão justamente os pontos de Lagrange.
 
@@ -79,27 +79,27 @@ Nas coordenadas do centro de massa, podemos escrever:
 E, analisando a força gravitacional sobre um dos corpos:
 
 \begin{equation}
-\mathbf{F} = m_1\mathbf{\ddot{r}}_1 = \mu\mathbf{\ddot{R}} = -\frac{Gm_1m_2}{R^3}\mathbf{R} \\
+\mathbf{F} = m_1\mathbf{\ddot{r}}_1 = \mu\mathbf{\ddot{R}} = -\frac{Gm_1m_2}{R^3}\mathbf{R} \label{dia}
 \end{equation}
 
-E note que ocorre exatamente o mesmo para o corpo 2. Podemos escrever a (2.12) como:
+E note que ocorre exatamente o mesmo para o corpo 2. Podemos escrever a (\ref{dia}) como:
 
 \begin{equation}
-\mathbf{\ddot{R}} + \frac{G(m_1+m_2)}{R^3}\mathbf{{R}} = 0
+\mathbf{\ddot{R}} + \frac{G(m_1+m_2)}{R^3}\mathbf{{R}} = 0 \label{dif}
 \end{equation}
 
-E, uma vez resolvida a (2.13), obtêm-se as funções horárias de ambas as partículas. Nos restringiremos aqui ao caso em que a distância entre os 2 corpos é constante. Nesse caso, a equação se torna simplesmente uma equação de oscilador harmônico em cada uma das coordenadas, e $\mathbf{R}$
+E, uma vez resolvida a (\ref{dif}), obtêm-se as funções horárias de ambas as partículas. Nos restringiremos aqui ao caso em que a distância entre os 2 corpos é constante. Nesse caso, a equação se torna simplesmente uma equação de oscilador harmônico em cada uma das coordenadas, e $\mathbf{R}$
 realiza um movimento circular uniforme cuja frequência é dada por:
 
 \begin{equation}
-\omega^2 = \frac{G(m_1+m_2)}{R^3}
+\omega^2 = \frac{G(m_1+m_2)}{R^3} \label{kepi}
 \end{equation}
 
 \section{Dedução dos pontos de Lagrange}
 
 Interessa-nos agora analisar uma extensão do problema anterior, adicionando no sistema um terceiro corpo, de massa $m<<m_1,m_2$, de maneira que ele não perturbe a órbita original nem desloque o centro de massa do sistema. 
 
-\begin{figure}[!h]
+\begin{figure}[H]
 \centering
 \includegraphics[scale = 0.5]{3_corpos.png}
 \caption{Problema restrito de 3 corpos.}
@@ -117,7 +117,7 @@ Nessas condições, chamamos de pontos de Lagrange os pontos que permitem uma ó
 Como $\mathbf{r_1}$ e $\mathbf{r_2}$ são funções do tempo, torna-se mais conveniente tratar do problema num referencial baricêntrico que gira com velocidade angular constante $\omega$. Nesse caso, devemos levar em consideração as forças de inércia:
 
 \begin{equation}
-\mathbf{F_{IN}} = -m\mathbf{\omega} \times (\mathbf{\omega} \times \mathbf{r}) -2m(\mathbf{\omega} \times \mathbf{\dot{r}}) 
+\mathbf{F_{IN}} = -m\boldsymbol{\omega} \times (\boldsymbol{\omega} \times \mathbf{r}) -2m(\mathbf{\omega} \times \mathbf{\dot{r}}) 
 \end{equation}
 
 Onde o primeiro termo corresponde à força centrífuga e o segundo, à força de Coriolis. Note que nesse referencial, os pontos de Lagrange correspondem a pontos de equilíbrio estático, nos quais a força resultante (incluindo as forças de inércia) é nula. Para uma solução estática, devemos, é claro, ter que $\mathbf{\dot{r}}=0$. Escolhendo coordenadas cartesianas convenientemente alinhadas, temos:
@@ -137,13 +137,14 @@ Onde,
 
 Escrevemos então a força resultante sobre o terceiro corpo:
 
+
 \begin{eqnarray}
-\mathbf{F_R} &= \mathbf{F_{IN}} + \mathbf{F_1} + \mathbf{F_2} \\
-&= m\left[\omega^2\mathbf{r} -G(m_1+m_2)\left(\frac{\beta(\mathbf{r}-\mathbf{r_1})}{|\mathbf{r}-\mathbf{r_1}|^3} + \frac{\alpha(\mathbf{r}-\mathbf{r_2})}{|\mathbf{r}-\mathbf{r_2}|^3}\right) \right] \\
-&= m\omega^2 \left[\left(x - \frac{\beta(x+\alpha R) R^3)}{((x+\alpha R)^2 + y^2)^{3/2}} - \frac{\alpha(x-\beta R) R^3)}{((x-\beta R)^2 + y^2)^{3/2}}\right)\mathbf{\hat{i}} + \left(y - \frac{y R^3}{((x+\alpha R)^2 + y^2)^{3/2}} - \frac{y R^3}{((x-\beta R)^2 + y^2)^{3/2}}\right)\mathbf{\hat{j}}\right] =0
+& \mathbf{F_{IN}} + \mathbf{F_1} + \mathbf{F_2} \\
+& = m\left[\omega^2\mathbf{r} -G(m_1+m_2)\left(\frac{\beta(\mathbf{r}-\mathbf{r_1})}{|\mathbf{r}-\mathbf{r_1}|^3} + \frac{\alpha(\mathbf{r}-\mathbf{r_2})}{|\mathbf{r}-\mathbf{r_2}|^3}\right) \right] \\
+& = m\omega^2 \left[\left(x - \frac{\beta(x+\alpha R) R^3)}{((x+\alpha R)^2 + y^2)^{3/2}} - \frac{\alpha(x-\beta R) R^3)}{((x-\beta R)^2 + y^2)^{3/2}}\right)\mathbf{\hat{i}} + \left(y - \frac{y R^3}{((x+\alpha R)^2 + y^2)^{3/2}} - \frac{y R^3}{((x-\beta R)^2 + y^2)^{3/2}}\right)\mathbf{\hat{j}}\right] 
 \end{eqnarray}
 
-E queremos os pares ordenados (x,y) onde a força se anula. Vemos que não é trivial resolver esse sistema diretamente. Entretanto, podemos induzir as respostas levando em consideração suas simetrias.
+Onde utilizamos a (\ref{kepi}). queremos os pares ordenados (x,y) onde a força se anula. Vemos que não é trivial resolver esse sistema diretamente. Entretanto, podemos induzir as respostas levando em consideração suas simetrias.
 
 Considerando a simetria por reflexão no eixo x, temos que a função tem que se anular na reta $y=0$. Definimos:
 
@@ -199,8 +200,8 @@ que anulada equivale a
 e torna-se claro que, como os pontos simultaneamente distam R de um dos (e portanto ambos os) corpos e os equidistam, localizam-se nos vértices dos dois triângulos equiláteros determinados pela aresta que liga os corpos no espaço, ou, escrito explicitamente,
 
 \begin{align}
-    L4: & \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}\right),\frac{\sqrt{3}}{2}R\right) \\
-    L5: & \left(\frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}\right),-\frac{\sqrt{3}}{2}R\right)
+    L4: & \quad \frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}\right)\mathbf{\hat{i}} +\frac{\sqrt{3}}{2}R\;\mathbf{\hat{j}} \\
+    L5: & \quad \frac{R}{2}\left(\frac{m_1 - m_2}{m_1 + m_2}\right)\mathbf{\hat{i}}  -\frac{\sqrt{3}}{2}R\;\mathbf{\hat{j}}
 \end{align}
 
 \section{Estabilidade}
@@ -208,7 +209,7 @@ e torna-se claro que, como os pontos simultaneamente distam R de um dos (e porta
 Podemos associar à força resultante um potencial generalizado, tal que:
 
 \begin{equation}
-\mathbf{F_R} = \mathbf{-\nabla} U + \frac{d}{dt}(\mathbf{\nabla _v}U)
+\mathbf{F_R} = -\boldsymbol{\nabla} U + \frac{d}{dt}(\boldsymbol{\nabla _v}U)
 \end{equation}
 
 Onde os pontos de equilíbrio encontrados correspondem a pontos onde a variação do potencial é estacionária. Analisaremos agora o comportamento da órbita para pequenos deslocamentos dos pontos de equilíbrio. Considerando o $i$-ésimo ponto de Lagrange:
@@ -343,7 +344,7 @@ incluindo, agora, no último termo, efeitos de maré devido à companheira. A eq
 
 \begin{equation}
     \label{eq:rochemotion}
-    \ddot{\mathbf{r}}_1 = -\frac{1}{\rho}\nabla P - \nabla U_{eff} - 2\mathbf{\omega}\times\dot{\mathbf{r}}_1
+    \ddot{\mathbf{r}}_1 = -\frac{1}{\rho}\nabla P - \nabla U_{ef} - 2\mathbf{\omega}\times\dot{\mathbf{r}}_1
 \end{equation}
 
 onde $\rho$, a densidade volumar de massa da estrela, e $P$, a pressão do material na estrela, descrevem a hidrodinâmica do material estelar devido à rotação do corpo. Caso a velocidade angular de rotação da estrela $\Omega_1$ e a velocidade angular orbital do binário $\omega$ sejam iguais, não há movimento do elemento de massa no nosso referencial, reduzindo a \ref{eq:rochemotion} ao equilíbrio hidrostático
